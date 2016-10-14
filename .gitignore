@@ -1,0 +1,5 @@
+*.tif
+*.obj
+*.ply
+*.jar
+.DS_Store
