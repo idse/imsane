@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SOI timeStamp="2015   7  29   8  53  15">
+   <dynamic>0</dynamic>
+   <timePoints>0</timePoints>
+   <atlas>
+      <Atlas>
+         <charts>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>xy_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[800,800]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,800]</direction>
+                        <direction index="2">[1,800]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>xy</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[800,800]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,800]</direction>
+                        <direction index="2">[1,800]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  2</phiSize>
+               <subSampling>2</subSampling>
+               <ssZero>1</ssZero>
+               <filenamePostfix>__T0000</filenamePostfix>
+            </Map>
+         </charts>
+         <transitionMaps/>
+      </Atlas>
+   </atlas>
+   <topologicalSpace>
+      <TopologicalSpace>
+         <nsets>1</nsets>
+         <intersects>1</intersects>
+         <sets>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>xy_index</name>
+               <dimension>2</dimension>
+               <stepSize>[1,1]</stepSize>
+               <gridSize>[800,800]</gridSize>
+               <boundary>
+                  <direction index="1">[1,800]</direction>
+                  <direction index="2">[1,800]</direction>
+               </boundary>
+            </Set>
+         </sets>
+      </TopologicalSpace>
+   </topologicalSpace>
+   <fields>
+      <Field time="0">
+         <name>embedding</name>
+         <patchClass>diffgeometry.CoordinateMap</patchClass>
+         <targetSpace>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>sampleVolume</name>
+               <dimension>3</dimension>
+               <stepSize>[1,1,1]</stepSize>
+               <gridSize>[800,800,146]</gridSize>
+               <boundary>
+                  <direction index="1">[1,800]</direction>
+                  <direction index="2">[1,800]</direction>
+                  <direction index="3">[1,146]</direction>
+               </boundary>
+            </Set>
+         </targetSpace>
+         <patches>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>xy_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[800,800]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,800]</direction>
+                        <direction index="2">[1,800]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>sampleVolume</name>
+                     <dimension>3</dimension>
+                     <stepSize>[1,1,1]</stepSize>
+                     <gridSize>[800,800,146]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,800]</direction>
+                        <direction index="2">[1,800]</direction>
+                        <direction index="3">[1,146]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  3</phiSize>
+               <subSampling>2</subSampling>
+               <ssZero>1</ssZero>
+               <filenamePostfix>_T0000</filenamePostfix>
+            </Map>
+         </patches>
+      </Field>
+      <Field time="0">
+         <name>data</name>
+         <patchClass>diffgeometry.TensorPatch</patchClass>
+         <targetSpace>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>twoColor_16bit</name>
+               <dimension>2</dimension>
+               <stepSize>[1,1]</stepSize>
+               <gridSize>[65536,65536]</gridSize>
+               <boundary>
+                  <direction index="1">[0,65535]</direction>
+                  <direction index="2">[0,65535]</direction>
+               </boundary>
+            </Set>
+         </targetSpace>
+         <patches>
+            <Map subclass="diffgeometry.TensorPatch">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>xy_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[800,800]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,800]</direction>
+                        <direction index="2">[1,800]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>twoColor_16bit</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[65536,65536]</gridSize>
+                     <boundary>
+                        <direction index="1">[0,65535]</direction>
+                        <direction index="2">[0,65535]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>2  1</phiSize>
+               <filenamePostfix>_T0000</filenamePostfix>
+               <type>0</type>
+               <chartName>xy</chartName>
+               <coordReps/>
+            </Map>
+         </patches>
+      </Field>
+   </fields>
+</SOI>

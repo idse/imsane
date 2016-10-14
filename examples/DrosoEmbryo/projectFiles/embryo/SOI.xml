@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SOI timeStamp="2015   1  14  13  21  52">
+   <dynamic>0</dynamic>
+   <timePoints>0  50</timePoints>
+   <atlas>
+      <Atlas>
+         <charts>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>exponential_1_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1224,1224]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1224]</direction>
+                        <direction index="2">[1,1224]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>exponential_1</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1224,1224]</gridSize>
+                     <boundary>
+                        <direction index="1">[-611.6169,611.6169]</direction>
+                        <direction index="2">[-611.6169,611.6169]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  2</phiSize>
+               <subSampling>2</subSampling>
+               <ssZero>1</ssZero>
+               <filenamePostfix>__T0000</filenamePostfix>
+            </Map>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>exponential_2_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1218,1218]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1218]</direction>
+                        <direction index="2">[1,1218]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>exponential_2</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1218,1218]</gridSize>
+                     <boundary>
+                        <direction index="1">[-608.9227,608.9227]</direction>
+                        <direction index="2">[-608.9227,608.9227]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  2</phiSize>
+               <subSampling>2</subSampling>
+               <ssZero>1</ssZero>
+               <filenamePostfix>__T0000</filenamePostfix>
+            </Map>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>conformal_1_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1224,1224]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1224]</direction>
+                        <direction index="2">[1,1224]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>conformal_1</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1224,1224]</gridSize>
+                     <boundary>
+                        <direction index="1">[-611.6169,611.6169]</direction>
+                        <direction index="2">[-611.6169,611.6169]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  2</phiSize>
+               <subSampling>2</subSampling>
+               <ssZero>1</ssZero>
+               <filenamePostfix>__T0000</filenamePostfix>
+            </Map>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>conformal_2_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1218,1218]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1218]</direction>
+                        <direction index="2">[1,1218]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>conformal_2</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1218,1218]</gridSize>
+                     <boundary>
+                        <direction index="1">[-608.9227,608.9227]</direction>
+                        <direction index="2">[-608.9227,608.9227]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  2</phiSize>
+               <subSampling>2</subSampling>
+               <ssZero>1</ssZero>
+               <filenamePostfix>__T0000</filenamePostfix>
+            </Map>
+         </charts>
+         <transitionMaps/>
+      </Atlas>
+   </atlas>
+   <topologicalSpace>
+      <TopologicalSpace>
+         <nsets>4</nsets>
+         <intersects>[1,0,0,0; 0,1,0,0; 0,0,1,0; 0,0,0,1]</intersects>
+         <sets>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>exponential_1_index</name>
+               <dimension>2</dimension>
+               <stepSize>[1,1]</stepSize>
+               <gridSize>[1224,1224]</gridSize>
+               <boundary>
+                  <direction index="1">[1,1224]</direction>
+                  <direction index="2">[1,1224]</direction>
+               </boundary>
+            </Set>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>exponential_2_index</name>
+               <dimension>2</dimension>
+               <stepSize>[1,1]</stepSize>
+               <gridSize>[1218,1218]</gridSize>
+               <boundary>
+                  <direction index="1">[1,1218]</direction>
+                  <direction index="2">[1,1218]</direction>
+               </boundary>
+            </Set>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>conformal_1_index</name>
+               <dimension>2</dimension>
+               <stepSize>[1,1]</stepSize>
+               <gridSize>[1224,1224]</gridSize>
+               <boundary>
+                  <direction index="1">[1,1224]</direction>
+                  <direction index="2">[1,1224]</direction>
+               </boundary>
+            </Set>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>conformal_2_index</name>
+               <dimension>2</dimension>
+               <stepSize>[1,1]</stepSize>
+               <gridSize>[1218,1218]</gridSize>
+               <boundary>
+                  <direction index="1">[1,1218]</direction>
+                  <direction index="2">[1,1218]</direction>
+               </boundary>
+            </Set>
+         </sets>
+      </TopologicalSpace>
+   </topologicalSpace>
+   <fields>
+      <Field time="0">
+         <name>embedding</name>
+         <patchClass>diffgeometry.CoordinateMap</patchClass>
+         <targetSpace>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>sampleVolume</name>
+               <dimension>3</dimension>
+               <stepSize>[1,1,1]</stepSize>
+               <gridSize>[1022,462,384]</gridSize>
+               <boundary>
+                  <direction index="1">[1,1022]</direction>
+                  <direction index="2">[1,462]</direction>
+                  <direction index="3">[1,384]</direction>
+               </boundary>
+            </Set>
+         </targetSpace>
+         <patches>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>exponential_1_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1224,1224]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1224]</direction>
+                        <direction index="2">[1,1224]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>sampleVolume</name>
+                     <dimension>3</dimension>
+                     <stepSize>[1,1,1]</stepSize>
+                     <gridSize>[1022,462,384]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1022]</direction>
+                        <direction index="2">[1,462]</direction>
+                        <direction index="3">[1,384]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  3</phiSize>
+               <filenamePostfix>_T0000</filenamePostfix>
+            </Map>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>exponential_2_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1218,1218]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1218]</direction>
+                        <direction index="2">[1,1218]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>sampleVolume</name>
+                     <dimension>3</dimension>
+                     <stepSize>[1,1,1]</stepSize>
+                     <gridSize>[1022,462,384]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1022]</direction>
+                        <direction index="2">[1,462]</direction>
+                        <direction index="3">[1,384]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  3</phiSize>
+               <filenamePostfix>_T0000</filenamePostfix>
+            </Map>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>conformal_1_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1224,1224]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1224]</direction>
+                        <direction index="2">[1,1224]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>sampleVolume</name>
+                     <dimension>3</dimension>
+                     <stepSize>[1,1,1]</stepSize>
+                     <gridSize>[1022,462,384]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1022]</direction>
+                        <direction index="2">[1,462]</direction>
+                        <direction index="3">[1,384]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  3</phiSize>
+               <filenamePostfix>_T0000</filenamePostfix>
+            </Map>
+            <Map subclass="diffgeometry.CoordinateMap">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>conformal_2_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1218,1218]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1218]</direction>
+                        <direction index="2">[1,1218]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>sampleVolume</name>
+                     <dimension>3</dimension>
+                     <stepSize>[1,1,1]</stepSize>
+                     <gridSize>[1022,462,384]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1022]</direction>
+                        <direction index="2">[1,462]</direction>
+                        <direction index="3">[1,384]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  3</phiSize>
+               <filenamePostfix>_T0000</filenamePostfix>
+            </Map>
+         </patches>
+      </Field>
+      <Field time="0">
+         <name>metric</name>
+         <patchClass>diffgeometry.SquareTensorPatch</patchClass>
+         <targetSpace>
+            <Set subclass="diffgeometry.Set">
+               <name>metric</name>
+               <dimension>4</dimension>
+            </Set>
+         </targetSpace>
+         <patches/>
+      </Field>
+      <Field time="0">
+         <name>data</name>
+         <patchClass>diffgeometry.TensorPatch</patchClass>
+         <targetSpace>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>grayscale_16bit</name>
+               <dimension>1</dimension>
+               <stepSize>1</stepSize>
+               <gridSize>65536</gridSize>
+               <boundary>
+                  <direction index="1">[0,65535]</direction>
+               </boundary>
+            </Set>
+         </targetSpace>
+         <patches>
+            <Map subclass="diffgeometry.TensorPatch">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>exponential_1_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1224,1224]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1224]</direction>
+                        <direction index="2">[1,1224]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>grayscale_16bit</name>
+                     <dimension>1</dimension>
+                     <stepSize>1</stepSize>
+                     <gridSize>65536</gridSize>
+                     <boundary>
+                        <direction index="1">[0,65535]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  1</phiSize>
+               <filenamePostfix>_T0000</filenamePostfix>
+               <type/>
+               <chartName>exponential_1</chartName>
+               <coordReps/>
+            </Map>
+            <Map subclass="diffgeometry.TensorPatch">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>exponential_2_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1218,1218]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1218]</direction>
+                        <direction index="2">[1,1218]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>grayscale_16bit</name>
+                     <dimension>1</dimension>
+                     <stepSize>1</stepSize>
+                     <gridSize>65536</gridSize>
+                     <boundary>
+                        <direction index="1">[0,65535]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  1</phiSize>
+               <filenamePostfix>_T0000</filenamePostfix>
+               <type/>
+               <chartName>exponential_2</chartName>
+               <coordReps/>
+            </Map>
+            <Map subclass="diffgeometry.TensorPatch">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>conformal_1_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1224,1224]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1224]</direction>
+                        <direction index="2">[1,1224]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>grayscale_16bit</name>
+                     <dimension>1</dimension>
+                     <stepSize>1</stepSize>
+                     <gridSize>65536</gridSize>
+                     <boundary>
+                        <direction index="1">[0,65535]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  1</phiSize>
+               <filenamePostfix>_T0000</filenamePostfix>
+               <type/>
+               <chartName>conformal_1</chartName>
+               <coordReps/>
+            </Map>
+            <Map subclass="diffgeometry.TensorPatch">
+               <domain>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>conformal_2_index</name>
+                     <dimension>2</dimension>
+                     <stepSize>[1,1]</stepSize>
+                     <gridSize>[1218,1218]</gridSize>
+                     <boundary>
+                        <direction index="1">[1,1218]</direction>
+                        <direction index="2">[1,1218]</direction>
+                     </boundary>
+                  </Set>
+               </domain>
+               <image>
+                  <Set subclass="diffgeometry.FiniteSet">
+                     <name>grayscale_16bit</name>
+                     <dimension>1</dimension>
+                     <stepSize>1</stepSize>
+                     <gridSize>65536</gridSize>
+                     <boundary>
+                        <direction index="1">[0,65535]</direction>
+                     </boundary>
+                  </Set>
+               </image>
+               <phiSize>1  1</phiSize>
+               <filenamePostfix>_T0000</filenamePostfix>
+               <type/>
+               <chartName>conformal_2</chartName>
+               <coordReps/>
+            </Map>
+         </patches>
+      </Field>
+      <Field time="50">
+         <name>data</name>
+         <patchClass>diffgeometry.TensorPatch</patchClass>
+         <targetSpace>
+            <Set subclass="diffgeometry.FiniteSet">
+               <name>grayscale_16bit</name>
+               <dimension>1</dimension>
+               <stepSize>1</stepSize>
+               <gridSize>65536</gridSize>
+               <boundary>
+                  <direction index="1">[0,65535]</direction>
+               </boundary>
+            </Set>
+         </targetSpace>
+         <patches/>
+      </Field>
+   </fields>
+</SOI>
