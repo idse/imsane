@@ -424,6 +424,9 @@ classdef Map < handle_light
                 debugMsg(2, 'numeric\n');
                 
                 imp = mp.apply; 
+                if numel(imp) == 3
+                    figure, imshow(imp{3},[])
+                end
                 compDef = this.apply(imp);
 
             % analytic composition 

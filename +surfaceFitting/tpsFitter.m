@@ -118,8 +118,11 @@ classdef tpsFitter < surfaceFitting.surfaceFitter
                                                             bdry, [1 1 1]);
                                                         
             % tps fit works well with ~10^3 points, not too much more
-            ssexp = floor(log10(size(pointCloud.points,1))) - 3;
-            PC = pointCloud.points(1:10^ssexp:end,:);
+            %ssexp = floor(log10(size(pointCloud.points,1))) - 3;
+            %PC = pointCloud.points(1:10^ssexp:end,:);
+            
+            idx = round(linspace(1,size(pointCloud.points,1),5000));
+            PC = pointCloud.points(idx,:);
             
             debugMsg(2, 'Fitting thin plate spline');
             ticID = tic;

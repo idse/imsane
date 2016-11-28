@@ -124,7 +124,8 @@ classdef Stack < handle_light
             elseif nChannels == 3
                 channelPrefix = 'RGB';
             else
-                error('more than 3 channels?');
+                warning('more than 3 channels?');
+                channelPrefix = 'RGB';
             end
             
             if strcmp(stackClass, 'uint8')

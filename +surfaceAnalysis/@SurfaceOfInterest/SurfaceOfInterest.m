@@ -226,7 +226,7 @@ classdef SurfaceOfInterest < diffgeometry.Manifold2D
                 EmbPatch = embedding.getPatch(curDom.name);
                 chartInv = curChart.getInverse();
                 chartEmb = EmbPatch.compose(chartInv);
-                                
+
                 %---- mask interpolation outside data ---------------------
 
                 % boundary curve: image of index set boundary
@@ -258,7 +258,8 @@ classdef SurfaceOfInterest < diffgeometry.Manifold2D
 
                 % normal displacement unit
                 if onionOpts.zEvolve
-                    dX = {0,0,1};
+                    debugMsg(2,'zEvolve\n');
+                    dX = {0,0,dN};
                 else
                     dX = {dN*Nx,dN*Ny,dN*Nz}; 
                 end
@@ -272,6 +273,10 @@ classdef SurfaceOfInterest < diffgeometry.Manifold2D
 
                     % normally evolved embedding
                     def = {X{1} + idx*dX{1}, X{2} + idx*dX{2}, X{3} + idx*dX{3}};
+                    
+                    %figure, imshow(def{3} > stack.image.domain.boundary{3}(2));
+                    %[min(def{3}(:)) max(def{3}(:))]
+                    
                     embLayer = diffgeometry.CoordinateMap(chartEmb.domain,...
                                             chartEmb.image, def);
 
@@ -290,7 +295,7 @@ classdef SurfaceOfInterest < diffgeometry.Manifold2D
                     else
                         type = []; % single scalar
                     end
-                    
+
                     % convert index to field name
                     idx = li - halfLayers - 1;
                     if idx < 0
@@ -302,7 +307,7 @@ classdef SurfaceOfInterest < diffgeometry.Manifold2D
                     end
 
                     debugMsg(2, ['pulling back ' fieldName '\n']);
-                    
+
                     dataField = this.getField(fieldName);
                     dataPatch = dataField(ti).getPatch(curChart.domain.name);
 
@@ -322,12 +327,12 @@ classdef SurfaceOfInterest < diffgeometry.Manifold2D
                     end  
                 end
             end
-            
+
             % make MIP/SIP if wanted
             if onionOpts.makeIP 
                 
                 if strcmp(onionOpts.makeIP, 'both')
-                    
+
                     opts = onionOpts;
                     opts.makeIP = 'MIP';
                     this.makeIP(time, opts);
@@ -641,7 +646,9 @@ classdef SurfaceOfInterest < diffgeometry.Manifold2D
                     end
 
                     data = this.getField(fieldName);
-                    data = data(t);
+                    if numel(data)>1
+                        data = data(t);
+                    end
                     
                     % for each channel
                     for ci = 1:nCh
