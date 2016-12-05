@@ -57,33 +57,13 @@ classdef Stack < handle_light
         imageSize;      % size of the image [x y z] (actual data is [y x z])
     end
     
-    properties (Constant = true)
-        
-        % defines the possible stack types as FiniteSet (e.g. grayscale_16bit)
-        imageSpaces = struct(...
-            'binary', diffgeometry.FiniteSet('binary', {[0 1]}, 1),... 
-            'grayscale_16bit', diffgeometry.FiniteSet('grayscale_16bit',...
-                                                {[0 2^(16)-1]}, 1),...
-            'grayscale_8bit', diffgeometry.FiniteSet('grayscale_8bit',...
-                                                        {[0 255]}, 1),...
-            'RGB_8bit', diffgeometry.FiniteSet('RGB_8bit',...
-                                {[0 255], [0 255], [0 255]}, [1 1 1]),...
-            'RGB_16bit', diffgeometry.FiniteSet('RGB_16bit',...
-                    {[0 2^(16)-1], [0 2^(16)-1], [0 2^(16)-1]}, [1 1 1]),...
-            'twoColor_8bit', diffgeometry.FiniteSet('twoColor_8bit',...
-                                {[0 255], [0 255]}, [1 1]),...
-            'twoColor_16bit', diffgeometry.FiniteSet('twoColor_16bit',...
-                                {[0 2^(16)-1], [0 2^(16)-1]}, [1 1])...
-            );
-    end
-    
 	%---------------------------------------------------------------------
     % protected methods
     %---------------------------------------------------------------------
     
     methods (Access = protected, Static)
        
-        function [type nChannels] = detectStackType(stack)
+        function imageSpace = detectStackType(stack)
             % DETECTSTACKTYPE Make a best guess of the stack type
             %
             % [type nChannels] = detectStackType(stack)
@@ -116,25 +96,25 @@ classdef Stack < handle_light
                 stackClass = class(stack{1});
             end
             
-            % assign type
-            if nChannels == 1
-                channelPrefix = 'grayscale';
-            elseif nChannels == 2
-                channelPrefix = 'twoColor';
-            elseif nChannels == 3
-                channelPrefix = 'RGB';
-            else
-                warning('more than 3 channels?');
-                channelPrefix = 'RGB';
-            end
+            channelPrefix = [num2str(nChannels) 'channel'];
             
             if strcmp(stackClass, 'uint8')
                 type = [channelPrefix '_8bit'];
+                maxval = 2^5-1;
             elseif strcmp(stackClass, 'uint16');
                 type = [channelPrefix '_16bit'];
+                maxval = 2^(16)-1;
             else
                 error('unknown stack type');
             end
+            
+            boundary = {};
+            stepsize = [];
+            for i = 1:nChannels
+                boundary = [boundary, [0 maxval]];
+                stepsize = [stepsize 1];
+            end
+            imageSpace = diffgeometry.FiniteSet(type, boundary, stepsize);
         end 
     end
     
@@ -153,7 +133,7 @@ classdef Stack < handle_light
             %
             % Stack(stack)
             % Stack(stack, resolution)
-            % Stack(stack, resolution, description, type)
+            % Stack(stack, resolution, description)
             %
             % stack:        4D stack with the 4 dimension color (or 3D for
             %               greyscale) or a cell array, e.g. {R,G,B}
@@ -166,21 +146,12 @@ classdef Stack < handle_light
             if isempty(stack)
                 return;
             end
-
-            % if stack type was passed use it, else detect it
-            if nargin < 4
-                [type nChannels] = this.detectStackType(stack);
-            else
-                type = varargin{3};
-                if ~isfield(this.imageSpaces, type);
-                    error(['unknown stack type ' type ' specified']);
-                end
-            end
-            imageSpace = this.imageSpaces.(type);
+            imageSpace = this.detectStackType(stack);
+            nChannels = imageSpace.dimension;
             
             % set default channel to color mapping for color image
             if nChannels > 1
-                this.channelColor = [1 2 3];
+                this.channelColor = 1:nChannels;
             end
             
             % if an array with multiple channels was passed, convert to

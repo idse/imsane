@@ -371,7 +371,11 @@ classdef (Abstract) surfaceFitter < handle_light
             alignedFitPts = [X{1}(:),X{2}(:),X{3}(:)];
             
             % show image, possibly with pointcloud
-            imshow(stack.getSlice(options.dimension, options.value)); 
+            slice = stack.getSlice(options.dimension, options.value);
+            if size(slice,3) > 3
+                slice = slice(:,:,1:3);
+            end
+            imshow(slice); 
             
             if ~isempty(pointCloud)
                 

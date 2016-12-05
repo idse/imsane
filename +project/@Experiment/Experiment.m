@@ -363,7 +363,7 @@ classdef Experiment < handle_light
             this.stack.setDescription(this.expMeta.description);
             
             % store imageSpace in metadata
-            this.fileMeta.imageSpace = this.stack.image.image.name;
+            this.fileMeta.imageSpace = this.stack.image.image;
         end
         
         function loadStackBioformats(this, varargin)
@@ -509,7 +509,7 @@ classdef Experiment < handle_light
             this.stack.setDescription(this.expMeta.description);
             
             % store imageSpace in metadata
-            this.fileMeta.imageSpace = this.stack.image.image.name;
+            this.fileMeta.imageSpace = this.stack.image.image;
         end
         
         %------------------------------------------------------
@@ -1234,9 +1234,8 @@ classdef Experiment < handle_light
                 this.fitter.setFitDomain(this.stack.image.domain);
                 embeddingSpace = this.fitter.fitDomain;
             end
-            
-            emptyStack = surfaceDetection.Stack([]);
-            dataSpace = emptyStack.imageSpaces.(this.fileMeta.imageSpace);
+
+            dataSpace = this.fileMeta.imageSpace;
             
             % construct surface of interest object;
             this.SOI = surfaceAnalysis.SurfaceOfInterest(dataSpace,...

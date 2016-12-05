@@ -175,7 +175,11 @@ classdef (Abstract) surfaceDetector < handle_light
             end
 
             % display image    
-            imshow(stack.getSlice(options.dimension, options.value)); 
+            slice = stack.getSlice(options.dimension, options.value);
+            if size(slice,3) > 3
+                slice = slice(:,:,1:3);
+            end
+            imshow(slice); 
             
             % overlay point cloud. 
             if isfield(options, 'pointCloud')
