@@ -33,6 +33,11 @@ classdef planarEdgeDetector < surfaceDetection.planarDetector
     % properties
     %---------------------------------------------------------------------
     
+    properties (SetAccess = protected)
+        
+        maxdIdx %maximal derivative in z
+    end
+    
     properties (Constant)
         % default detector options
         defaultOptions = struct('sigma', 1, 'channels', 1, 'zdir', 3,...
@@ -212,6 +217,8 @@ classdef planarEdgeDetector < surfaceDetection.planarDetector
             maxima3d = repmat(maxima, [1, 1, zmax - zmin + 1]);
             apical = (dIdx == maxima3d & dIdx > 0.01);
 
+            this.maxdIdx = maxima;
+            
             % to turn this into a mesh, take the maximal z coordinate for fixed x,y
             % slice by slice to avoid using too much memory
             [~,Z] = meshgrid(xmin:xmax, zmin:zmax);
