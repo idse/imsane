@@ -198,6 +198,7 @@ classdef Experiment < handle_light
                 disp('using bioformats to get metadata');
                 this.loadStackBioformats(justMeta);
             else
+                warning('did not find bioformats, trying without');
                 assert(~isempty(this.fileMeta.nChannels),...
                     'fileMeta.nChannels needs to be specified');
                 this.loadStack(justMeta);
