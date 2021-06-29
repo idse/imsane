@@ -115,7 +115,7 @@ classdef ilastikDetectorMultiSurf < surfaceDetection.surfaceDetector
             % Segmentation of a prediction map from ilastik. 
             %---------------------------------
             
-            
+
             % load the exported data out of the ilastik prediction
             fileName = opts.fileName;
             h5fileInfo = h5info(fileName);
@@ -130,10 +130,19 @@ classdef ilastikDetectorMultiSurf < surfaceDetection.surfaceDetector
             
             foreGround = opts.foreGroundChannel;
             
-            % ilastik internally swaps axes. 1: class, 2: y, 3: x 4 : z 
-            pred = permute(file,[3,2,4,1]);
-            pred = pred(:,:,:,foreGround);
-            pred = uint8(255*pred);
+            % added this 210628 to deal with simple segmentation, 
+            % seems to work, but not sure anymore what happens below
+            if contains(fileName,'Simple Segmentation')
+                pred = permute(file,[3,2,4,1]);
+                pred = pred == opts.foreGroundChannel;
+                pred = uint8(255*pred);
+                
+            elseif contains(fileName,'Probabilities')
+                % ilastik internally swaps axes. 1: class, 2: y, 3: x 4 : z 
+                pred = permute(file,[3,2,4,1]);
+                pred = pred(:,:,:,foreGround);
+                pred = uint8(255*pred);
+            end
            
             % size of prediction
             idxPerm = circshift(1:3, [1 -opts.zdim]);
